@@ -52,14 +52,15 @@ def feature_extraction(inputfile):
         prev_pos = prev_tok.pos_
         next_pos = next_tok.pos_
         morph = tok.morph
-        
+        iob = tok.ent_iob_
+        ne = tok.ent_type
             
 
           
        
 
         feature_dict = {'Token': token, 'PoS': pos, 'Lemma': lemma, 'Dependency': dependency, 'Head': head, 'Head POS': pos_head,
-        'Dependent': dependent, 'Constituent': constituent, 'Previous POS': prev_pos, 'Next POS': next_pos, 'Morph': morph}
+        'Dependent': dependent, 'Constituent': constituent, 'Previous POS': prev_pos, 'Next POS': next_pos, 'Morph': morph, 'IOB': iob, 'NE': ne}
         data.append(feature_dict)
 
     
