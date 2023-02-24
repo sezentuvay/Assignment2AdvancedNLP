@@ -167,7 +167,7 @@ def main(argv=None):
                 
     trainingfile = argv[1] #Training file
     inputfile = argv[2] #Development or Test file
-    modelname = argv[3] #'logreg' or 'cnb' or 'svm'
+    modelname = argv[3] #'logreg' 
 
     
     feature_values, labels = extract_features_and_gold_labels(trainfile, selected_features=selected_feature)
