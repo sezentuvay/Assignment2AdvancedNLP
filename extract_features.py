@@ -51,6 +51,7 @@ def feature_extraction(inputfile):
             break
         prev_pos = prev_tok.pos_
         next_pos = next_tok.pos_
+        morph = tok.morph
         
             
 
@@ -58,7 +59,7 @@ def feature_extraction(inputfile):
        
 
         feature_dict = {'Token': token, 'PoS': pos, 'Lemma': lemma, 'Dependency': dependency, 'Head': head, 'Head POS': pos_head,
-        'Dependent': dependent, 'Constituent': constituent, 'Previous POS': prev_pos, 'Next POS': next_pos}
+        'Dependent': dependent, 'Constituent': constituent, 'Previous POS': prev_pos, 'Next POS': next_pos, 'Morph': morph}
         data.append(feature_dict)
 
     
