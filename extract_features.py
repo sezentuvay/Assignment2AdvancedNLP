@@ -5,7 +5,7 @@ import pandas as pd
 def feature_extraction(inputfile):
     
     '''
-    Function that extracts potentially informative features from ConLL file for data exploration
+    Function that extracts features from ConLL file
     
     :param inputfile: path to ConLL file
     
