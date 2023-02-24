@@ -11,7 +11,7 @@ def feature_extraction(inputfile):
     
     :type inputfile: string
     
-    :return informative features: tsv file with informative features for each token in ConLL file
+    :return extracted features: tsv file with features for each token in ConLL file
     '''
 
     
