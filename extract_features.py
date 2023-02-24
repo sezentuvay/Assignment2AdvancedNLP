@@ -5,13 +5,13 @@ import pandas as pd
 def feature_extraction(inputfile):
     
     '''
-    Function that extracts features from ConLL file
+    Function that extracts potentially informative features from ConLL file for data exploration
     
     :param inputfile: path to ConLL file
     
     :type inputfile: string
     
-    :return extracted features: tsv file with features for each token in ConLL file
+    :return informative features: tsv file with informative features for each token in ConLL file
     '''
 
     
@@ -41,6 +41,9 @@ def feature_extraction(inputfile):
         pos_head = head.pos_
         dependent = [t.text for t in tok.children]
         constituent = [t.text for t in tok.subtree]
+        desc_dep = [t.dep_ for t in tok.subtree]
+        desc_l =  [t.n_lefts for t in tok.subtree]
+        desc_r =  [t.n_rights for t in tok.subtree]
         try:
             prev_tok = tok.nbor(-1)
         except IndexError:
@@ -53,20 +56,28 @@ def feature_extraction(inputfile):
         next_pos = next_tok.pos_
         morph = tok.morph
         iob = tok.ent_iob_
-        ne = tok.ent_type
+        ne = tok.ent_type_
+        subtree = tok.subtree
+        
+        
+ 
+
+        
             
 
           
        
 
         feature_dict = {'Token': token, 'PoS': pos, 'Lemma': lemma, 'Dependency': dependency, 'Head': head, 'Head POS': pos_head,
-        'Dependent': dependent, 'Constituent': constituent, 'Previous POS': prev_pos, 'Next POS': next_pos, 'Morph': morph, 'IOB': iob, 'NE': ne}
+        'Dependent': dependent, 'Constituent': constituent, 'Previous POS': prev_pos, 'Next POS': next_pos,  'Morph': morph, 'IOB': iob, 
+                        'NE': ne, 'Desc dep': desc_dep, 'Desc L': desc_l, 'Desc R': desc_r}
         data.append(feature_dict)
 
     
     df = pd.DataFrame(data=data)
-    df['Gold'] = pd.Series(gold_list)
-    df.to_csv('dev_extracted_features',sep='\t', index = False) 
+    df['Gold'] = pd.Series(gold_list)                
+    df.to_csv('dev_extracted_features',sep='\t', index = False) #change name of output file for dev data
+    
     
     
 def main(argv=None):
