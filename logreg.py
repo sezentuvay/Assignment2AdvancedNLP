@@ -33,9 +33,17 @@ def extract_features_and_labels(trainingfile):
                 constituent = components[6]
                 previous_pos = components[7]
                 next_pos = components[8]
+                morph = components[9]
+                iob = components[10]
+                ne = components[11]
+                desc_dep = components[12]
+                desc_l = components[13]
+                desc_r = components[14]
                 gold_a = components[-1]
-                feature_dict = {'Token': token, 'PoS': pos, 'Lemma': lemma, 'Dependency': dependency, 'Head': head, 'Head POS': pos_head,
-                'Dependent': dependent, 'Constituent': constituent, 'Previous POS': prev_pos, 'Next POS': next_pos}
+                    
+                 feature_dict = {'Token': token, 'PoS': pos, 'Lemma': lemma, 'Dependency': dependency, 'Head': head, 'Head POS': pos_head,
+        'Dependent': dependent, 'Constituent': constituent, 'Previous POS': prev_pos, 'Next POS': next_pos,  'Morph': morph, 'IOB': iob, 
+                        'NE': ne, 'Desc dep': desc_dep, 'Desc L': desc_l, 'Desc R': desc_r}
                 features.append(feature_dict)
                 gold.append(gold_a)
             
@@ -68,9 +76,16 @@ def extract_features(inputfile):
                 constituent = components[6]
                 previous_pos = components[7]
                 next_pos = components[8]
+                morph = components[9]
+                iob = components[10]
+                ne = components[11]
+                desc_dep = components[12]
+                desc_l = components[13]
+                desc_r = components[14]
                 gold_a = components[-1]
                 feature_dict = {'Token': token, 'PoS': pos, 'Lemma': lemma, 'Dependency': dependency, 'Head': head, 'Head POS': pos_head,
-                'Dependent': dependent, 'Constituent': constituent, 'Previous POS': prev_pos, 'Next POS': next_pos}
+        'Dependent': dependent, 'Constituent': constituent, 'Previous POS': prev_pos, 'Next POS': next_pos,  'Morph': morph, 'IOB': iob, 
+                        'NE': ne, 'Desc dep': desc_dep, 'Desc L': desc_l, 'Desc R': desc_r}
                 features.append(feature_dict)
                 gold.append(gold_a)
     return inputdata
