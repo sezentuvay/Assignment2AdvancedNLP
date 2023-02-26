@@ -57,7 +57,6 @@ def feature_extraction(inputfile, outputfile):
         morph = tok.morph
         iob = tok.ent_iob_
         ne = tok.ent_type_
-        subtree = tok.subtree
         
         
  
