@@ -2,7 +2,7 @@ import spacy
 import sys
 import pandas as pd
 
-def feature_extraction(inputfile):
+def feature_extraction(inputfile, outputfile):
     
     '''
     Function that extracts potentially informative features from ConLL file for data exploration
@@ -76,7 +76,7 @@ def feature_extraction(inputfile):
     
     df = pd.DataFrame(data=data)
     df['Gold'] = pd.Series(gold_list)                
-    df.to_csv('dev_extracted_features',sep='\t', index = False) #change name of output file for dev data
+    df.to_csv(outputfile,sep='\t', index = False) #change name of output file for dev data
     
     
     
@@ -86,6 +86,7 @@ def main(argv=None):
         argv = sys.argv
                 
     inputfile = argv[1] #Path to ConLL train or dev file
+    outputfile = argv[2]
     
     feature_extraction(inputfile)
 
