@@ -5,20 +5,20 @@ import pandas as pd
 def feature_extraction(inputfile, outputfile):
     
     '''
-    Function that extracts potentially informative features from ConLL file for data exploration
+    Function that extracts features from ConLL file for data exploration
     
     :param inputfile: path to ConLL file
     
     :type inputfile: string
     
-    :return informative features: tsv file with informative features for each token in ConLL file
+    :return informative features: tsv file with  features for each token in ConLL file
     '''
 
     
     conll_file = pd.read_csv(inputfile, delimiter='\t', header=None,  skipinitialspace = False, on_bad_lines='skip')
     df = pd.DataFrame(conll_file) 
     token_list = df[0].tolist()
-    gold_list = df[2].tolist()
+    gold_list = df[11].tolist()
     token_string = ' '.join(map(str, token_list))
     
     
