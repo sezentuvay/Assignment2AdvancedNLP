@@ -75,7 +75,6 @@ def feature_extraction(inputfile, outputfile):
     
     df = pd.DataFrame(data=data)
     df['Gold'] = pd.Series(gold_list) 
-    df.loc[:, 'Gold'] = df.Gold.shift(-1)
 
     df.to_csv(outputfile,sep='\t', index = False) #change name of output file for dev data
     
