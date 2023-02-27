@@ -82,7 +82,6 @@ def extract_features(inputfile):
                 desc_dep = components[12]
                 desc_l = components[13]
                 desc_r = components[14]
-                gold_a = components[-1]
                 feature_dict = {'Token': token, 'PoS': pos, 'Lemma': lemma, 'Dependency': dependency, 'Head': head, 'Head POS': pos_head,
         'Dependent': dependent, 'Constituent': constituent, 'Previous POS': prev_pos, 'Next POS': next_pos,  'Morph': morph, 'IOB': iob, 
                         'NE': ne, 'Desc dep': desc_dep, 'Desc L': desc_l, 'Desc R': desc_r}
