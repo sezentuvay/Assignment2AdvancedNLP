@@ -87,7 +87,7 @@ def main(argv=None):
     inputfile = argv[1] #Path to ConLL train or dev file
     outputfile = argv[2]
     
-    feature_extraction(inputfile)
+    feature_extraction(inputfile, outputfile)
 
     
     
