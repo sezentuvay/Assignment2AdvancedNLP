@@ -17,7 +17,7 @@ def feature_extraction(inputfile, outputfile):
     
     conll_file = pd.read_csv(inputfile, delimiter=',', header=None,  skipinitialspace = False, on_bad_lines='skip')
     df = pd.DataFrame(conll_file) 
-    token_list = df[0].tolist()
+    token_list = df[1].tolist()
     gold_list = df[12].tolist()
     token_string = ' '.join(map(str, token_list))
     
@@ -25,7 +25,7 @@ def feature_extraction(inputfile, outputfile):
     
 
     nlp = spacy.load('en_core_web_sm')
-    nlp.max_length = 5332026
+    nlp.max_length = 9120223
     doc = nlp(token_string)
 
 
