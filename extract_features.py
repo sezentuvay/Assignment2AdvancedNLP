@@ -15,10 +15,10 @@ def feature_extraction(inputfile, outputfile):
     '''
 
     
-    conll_file = pd.read_csv(inputfile, delimiter='\t', header=None,  skipinitialspace = False, on_bad_lines='skip')
+    conll_file = pd.read_csv(inputfile, delimiter=',', header=None,  skipinitialspace = False, on_bad_lines='skip')
     df = pd.DataFrame(conll_file) 
     token_list = df[0].tolist()
-    gold_list = df[11].tolist()
+    gold_list = df[12].tolist()
     token_string = ' '.join(map(str, token_list))
     
     
