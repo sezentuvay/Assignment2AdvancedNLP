@@ -13,7 +13,7 @@ read_conllu_to_csv.py:
 This file duplicates the sentences whenever there are multiple predicates, and gives those predicates' arguments to the next column. 
 The input is a conllu file: (en_ewt-up-dev.conllu, en_ewt-up-test.conllu, en_ewt-up-train.conllu), and the output is: dev.csv, test.csv, train.csv.   
 
-extract_features.py:
+extract_features.py: This file uses Spacy to extract features we consider to be useful for the role of SRL. The input file is the output from read_conllu_to_csv.py 
 
 
 argument_identification.py:
@@ -29,11 +29,11 @@ logreg.py:
 This file is based on the Machine Learning for NLP course, 2022. the same setup is used. For logreg, the hyperparameters have been tuned to not give a long runtime. 
 
 All imports needed:
-import conllu
-import pandas as pd
-import os
-import spacy
-import sys
-from sklearn.feature_extraction import DictVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn import metrics
+import conllu  
+import pandas as pd  
+import os  
+import spacy  
+import sys  
+from sklearn.feature_extraction import DictVectorizer  
+from sklearn.linear_model import LogisticRegression  
+from sklearn import metrics  
