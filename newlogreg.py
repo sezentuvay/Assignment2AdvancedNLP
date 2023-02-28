@@ -110,7 +110,7 @@ def create_classifier(features, gold):
     :return classifier: a trained Logistic Regression classifier
     :return vec: a DictVectorizer to which the feature values are fitted. '''
   
-    model = LogisticRegression(solver='lbfgs', max_iter=1000)
+    model = LogisticRegression(solver='saga', max_iter=200)
     vec = DictVectorizer()
     features_vectorized = vec.fit_transform(features)
     model.fit(features_vectorized, gold)
