@@ -4,7 +4,7 @@ def make_gold_binary(inputfile, outputfile):
     data = pd.read_csv(inputfile, encoding = 'utf-8', sep = '\t')
     binary_gold = []
     for gold in data['Gold']:
-        if str(gold).startswith('ARG'):
+        if 'ARG' in str(gold):
             binary_gold.append(1)
         else:
             binary_gold.append(0)
