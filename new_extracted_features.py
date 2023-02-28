@@ -81,6 +81,5 @@ def main():
     for inputfile in inputfiles:
         extract_features('data/output/'+inputfile+'.csv', 'data/output/'+inputfile.upper()+'_CSV.csv')
 
-if _name_ == '_main_':
-    main()
+main()
     
