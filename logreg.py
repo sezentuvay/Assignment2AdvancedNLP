@@ -131,7 +131,7 @@ def print_precision_recall_fscore(predictions, gold):
     print(report, sep='\t')
 
 
-def main(argv=None):
+def main():
           
     trainingfile = 'data/output/TRAIN_CSV.csv' #Training file
     inputfile = 'data/output/TEST_CSV.csv' #Development (DEV_CSV.csv) or Test file 
@@ -141,8 +141,7 @@ def main(argv=None):
     ml_model, vec = create_classifier(training_features, gold_labels)
     predictions = classify_data(ml_model, vec, inputfile)
     print_precision_recall_fscore(predictions, test_gold_labels)
-    
-if __name__ == '__main__':
-    main()
 
+    
+main()
 
