@@ -23,7 +23,7 @@ def make_gold_binary(inputfile, outputfile):
     data.to_csv(outputfile)
 
 def main():
-    inputfiles = ['test_new.csv', 'dev_new.csv', 'train_new.csv']
+    inputfiles = ['TEST_CSV.csv', 'TRAIN_CSV.csv', 'DEV_CSV.csv']
     for inputfile in inputfiles:
         make_gold_binary('data/output/'+inputfile, 'data/output/bin_'+inputfile)
 
