@@ -5,9 +5,14 @@ Run in the following order:
 2) extract_features.py
 3) FOR ARGUMENT IDENTIFICATION:
 3.1) argument_identification.py
-3.2) logreg.py (change the names of the input and outpufiles in def main)
+3.2) logreg.py (change the names of the input and outputfiles in the def main)
 4) FOR ARGUMENT CLASSIFICATION:
 4.1) logreg.py (change the names of the input and outputfiles in the def main)
+
+If you want to run the model with all the features ('big'):
+1) read_conllu_to_csv.py
+2) big_extract_features.py
+3) big_logreg.py (change the names of the input and outputfiles in the def main)
 
 read_conllu_to_csv.py:
 This file duplicates the sentences whenever there are multiple predicates, and gives those predicates' arguments to the next column. 
