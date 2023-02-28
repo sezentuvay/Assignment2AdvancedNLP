@@ -1,8 +1,15 @@
 import pandas as pd
 
 def make_gold_binary(inputfile, outputfile):
-    #take the inputfile (which is the output of feature_extraction.py), and changes the numbers in the last column to zeros and ones
-    #this is then saved in a new output file
+    '''
+    Function that takes the inputfile (which is the output of feature_extraction.py), and changes the numbers in the last column to zeros and ones
+    
+    :param inptufile: path to the inputfile
+    :param outputfile: path to the outputfile
+    
+    :type outputfile: string
+    '''
+    
     data = pd.read_csv(inputfile, encoding = 'utf-8', sep = '\t')
     binary_gold = []
     for gold in data['Gold']:
@@ -22,7 +29,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-#this script only needs to be run ones and all three files will be created. In the data-folder, you will need to create an output folder. 
-
 
