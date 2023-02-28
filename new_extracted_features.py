@@ -5,7 +5,7 @@ from spacy.tokens import Doc
 import csv
 
 
-def extract_features(input_path, output_path):
+def extract_features(inputfile, outputfile):
     
     '''
     Function that extracts features from ConLL file to feed into Logistic Regression model
@@ -21,7 +21,7 @@ def extract_features(input_path, output_path):
     '''
     
 
-    infile = pd.read_csv(input_path, delimiter=',', header=None,  skipinitialspace = False, on_bad_lines='skip')
+    infile = pd.read_csv(inputfile, delimiter=',', header=None,  skipinitialspace = False, on_bad_lines='skip')
     df = pd.DataFrame(infile) 
     token_list = df[2].tolist()
     gold_list = df[12].tolist()
@@ -42,7 +42,7 @@ def extract_features(input_path, output_path):
         return Doc(nlp.vocab, tokens)
     nlp = spacy.load('en_core_web_sm')
     nlp.tokenizer = custom_tokenizer
-    nlp.max_length = 5169840
+    nlp.max_length = 5169840 #adjust max length if needed
     text = joined_tokens
 
     doc = nlp(text)
@@ -66,10 +66,10 @@ def extract_features(input_path, output_path):
         data.append(feature_dict)
 
 
-    # save results tsv file
+    # save results to tsv file
     df = pd.DataFrame(data=data)
     df['Gold'] = gold_list  # append gold labels at the end
-    df.to_csv(output_path, sep='\t', header=True, index=False)
+    df.to_csv(outputfile, sep='\t', header=True, index=False)
 
 
 
@@ -77,9 +77,9 @@ def extract_features(input_path, output_path):
     
     
 def main():
-    input_paths = ['test.csv', 'dev.csv', 'train.csv']
-    for input_path in input_paths:
-        extract_features('data/output/'+input_path, 'data/output/'+input_path)
+    inputfiles = ['test.csv', 'dev.csv', 'train.csv']
+    for inputfile in inputfiles:
+        extract_features('data/output/'+inputfile, 'data/output/'+inputfile)
 
 if _name_ == '_main_':
     main()
