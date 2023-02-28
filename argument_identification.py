@@ -16,7 +16,7 @@ def make_gold_binary(inputfile, outputfile):
 def main():
     inputfiles = ['test_new.csv', 'dev_new.csv', 'train_new.csv']
     for inputfile in inputfiles:
-        make_gold_binary('data/output/'+inputfile, 'data/bin_'+inputfile)
+        make_gold_binary('data/output/'+inputfile, 'data/output/bin_'+inputfile)
 
 if __name__ == '__main__':
     main()
