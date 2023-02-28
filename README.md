@@ -13,7 +13,9 @@ read_conllu_to_csv.py:
 This file duplicates the sentences whenever there are multiple predicates, and gives those predicates' arguments to the next column. 
 The input is a conllu file: (en_ewt-up-dev.conllu, en_ewt-up-test.conllu, en_ewt-up-train.conllu), and the output is: dev.csv, test.csv, train.csv.   
 
-extract_features.py: This file uses Spacy to extract features we consider to be useful for the role of SRL. The input file is the csv file (train.csv, dev.csv and test.csv) from read_conllu_to_csv.py. The output is a csv file with the extracted features (train_new.csv / dev_new.csv / test_new.csv) .
+old_extract_features.py:  This file uses Spacy to extract features we consider to be useful for the role of SRL, however we were unable to implement them. The input file is the csv file (train.csv, dev.csv and test.csv) from read_conllu_to_csv.py. The output is a csv file with the extracted features (train_new.csv / dev_new.csv / test_new.csv) .
+
+extract_features.py: This file uses Spacy to extract features we consider to be useful for the role of SRL and could be implemented. The input file is the csv file (train.csv, dev.csv and test.csv) from read_conllu_to_csv.py. The output is a csv file with the extracted features (train_new.csv / dev_new.csv / test_new.csv) .
 
 
 argument_identification.py:
