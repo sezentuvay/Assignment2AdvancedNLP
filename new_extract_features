@@ -80,10 +80,10 @@ def main(argv=None):
     if argv is None:
         argv = sys.argv
                 
-    inputfile = argv[1] #Path to ConLL train, dev or test file
+    input_path = argv[1] #Path to ConLL train, dev or test file
     output_path = argv[2] #Path to new file with features
     
-    feature_extraction(inputfile, output_path)
+    feature_extraction(input_path, output_path)
 
     
     
