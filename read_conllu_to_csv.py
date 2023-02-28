@@ -1,6 +1,7 @@
 import conllu
 import pandas as pd
 import os
+import pyarrow.feather as feather
 
 def read_conllu_write_csv(input_file: str, output_csv: str):
     '''
@@ -53,6 +54,11 @@ def read_conllu_write_csv(input_file: str, output_csv: str):
     return big_df
 
 
-read_conllu_write_csv('data/input/en_ewt-up-test.conllu','data/output/test.csv')
-read_conllu_write_csv('data/input/en_ewt-up-train.conllu','data/output/train.csv')
+def main():
+    all_inputfiles = ['dev', 'train', 'test']
 
+    for file in all_inputfiles:
+        read_conllu_write_csv('data/input/en_ewt-up-'+file+'.conllu', 'data/output/'+file+'.csv')
+
+if __name__ == '__main__':
+    main()
