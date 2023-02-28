@@ -77,9 +77,9 @@ def extract_features(inputfile, outputfile):
     
     
 def main():
-    inputfiles = ['test.csv', 'dev.csv', 'train.csv']
+    inputfiles = ['test', 'dev', 'train']
     for inputfile in inputfiles:
-        extract_features('data/output/'+inputfile, 'data/output/'+inputfile)
+        extract_features('data/output/'+inputfile+'.csv', 'data/output/'+inputfile.upper()+'_CSV.csv')
 
 if _name_ == '_main_':
     main()
