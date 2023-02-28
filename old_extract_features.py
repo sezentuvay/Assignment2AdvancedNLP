@@ -8,10 +8,12 @@ def feature_extraction(inputfile, outputfile):
     Function that extracts features from ConLL file for data exploration
     
     :param inputfile: path to ConLL file
+    :param outputfile: path to ConLL file
     
     :type inputfile: string
+    :type outfile: string
     
-    :return informative features: tsv file with  features for each token in ConLL file
+    :return features: tsv file with  features for each token in ConLL file and associated gold labels
     '''
 
     
