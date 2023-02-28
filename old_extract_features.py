@@ -20,13 +20,26 @@ def feature_extraction(inputfile, outputfile):
     token_list = df[2].tolist()
     gold_list = df[12].tolist()
     token_string = ' '.join(map(str, token_list))
-    
-    
-    
+   
 
+    #create custom tokenizer
+
+    data = []
+    processed_tokens = []
+    for token in token_list:
+        newtoken = str(token)
+        processed_tokens.append(newtoken)
+    joined_tokens = " ".join(processed_tokens)
+
+    def custom_tokenizer(text):
+        tokens = df[2].tolist()
+        return Doc(nlp.vocab, tokens)
     nlp = spacy.load('en_core_web_sm')
-    nlp.max_length = 9120223
-    doc = nlp(token_string)
+    nlp.tokenizer = custom_tokenizer
+    nlp.max_length = 5169840
+    text = joined_tokens
+
+    doc = nlp(text)
 
 
     data = []
