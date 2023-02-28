@@ -77,7 +77,7 @@ def extract_features(input_path, output_path):
     
     
 def main():
-    input_paths = ['test_new.csv', 'dev_new.csv', 'train_new.csv']
+    input_paths = ['test.csv', 'dev.csv', 'train.csv']
     for input_path in input_paths:
         extract_features('data/output/'+input_path, 'data/output/'+input_path)
 
